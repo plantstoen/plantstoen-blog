@@ -1,0 +1,20 @@
+$length: 13rem;
+
+.test {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &__item {
+    background-color: gray;
+    width: 33%;
+    height: 0;
+    padding-bottom: 33%;
+
+    @media screen and (max-width: 500px) {
+      background-color: red;
+      width: 100%;
+    }
+  }
+}
