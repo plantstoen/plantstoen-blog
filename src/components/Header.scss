@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean");
-$about: #c678dd;
+$isactive: #c678dd;
 $project: #97c278;
 $playground: #e06c75;
 $contact: #61afef;
@@ -37,19 +37,7 @@ $contact: #61afef;
     padding-left: 35px;
 
     &.about {
-      color: $about;
-    }
-
-    &.project {
-      color: $project;
-    }
-
-    &.playground {
-      color: $playground;
-    }
-
-    &.contact {
-      color: $contact;
+      color: $isactive;
     }
   }
 }

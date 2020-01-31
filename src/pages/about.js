@@ -1,12 +1,35 @@
 import React from "react"
 import Layout from "../components/layout"
+import ProjectList from "../components/ProjectList"
+import { graphql } from "gatsby"
 
-const about = () => {
+export default ({ data }) => {
   return (
     <Layout>
-      <div>About페이지 입니다</div>
+      <ProjectList list="data.allMarkdownRemark.edges.node.id" />
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <h1>{node.frontmatter.projectname}</h1>
+      ))}
     </Layout>
   )
 }
 
-export default about
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: {
+        frontmatter: { type: { eq: "project" }, status: { eq: "done" } }
+      }
+      sort: { fields: frontmatter___start, order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            projectname
+          }
+        }
+      }
+    }
+  }
+`
