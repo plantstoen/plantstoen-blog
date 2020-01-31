@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
 
 export default ({ data }) => {
   return (
-    <div>
+    <Layout>
       <Link to="/">홈으로</Link>
       <h1>Amazing Pandas Eating Things</h1>
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
@@ -17,7 +18,7 @@ export default ({ data }) => {
           </Link>
         </div>
       ))}
-    </div>
+    </Layout>
   )
 }
 

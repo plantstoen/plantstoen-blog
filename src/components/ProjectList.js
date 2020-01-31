@@ -2,6 +2,7 @@
 
 import React from "react"
 import "./ProjectList.scss"
+import projecttest from "./../images/projecttest.png"
 
 const data = [
   {
@@ -21,10 +22,16 @@ const data = [
 const ProjectList = ({ list }) => {
   return (
     <div>
-      <h1>{list}</h1>
+      <a href="#testgg">이동</a>
+      <br />
+      <span>진행중인 프로젝트 입니다.</span>
       <div className="test">
         {data.map(item => (
-          <div className="test__item">{item.text}</div>
+          <div className="test__item">
+            <div className="content">
+              <img src={projecttest} alt="test" width="100%" />
+            </div>
+          </div>
         ))}
       </div>
     </div>

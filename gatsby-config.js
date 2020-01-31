@@ -22,11 +22,32 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `image`,
+        path: `${__dirname}/src/data/post/image`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `project`,
         path: `${__dirname}/src/data/project`,
       },
     },
-    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,

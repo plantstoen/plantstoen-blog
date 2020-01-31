@@ -18,7 +18,7 @@ const Header = ({ history }) => {
     <div className="wrap">
       <Link to="/">
         <div className="namebox">
-          <span className="namebox__nametext">Sangmin Kim</span>
+          <span className="namebox__nametext">Plantstoen</span>
         </div>
       </Link>
       {window.innerWidth > 750 ? (

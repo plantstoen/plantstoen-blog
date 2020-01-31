@@ -7,7 +7,6 @@ $length: 13rem;
   justify-content: flex-start;
 
   &__item {
-    background-color: gray;
     width: 33%;
     height: 0;
     padding-bottom: 33%;
@@ -17,4 +16,8 @@ $length: 13rem;
       width: 100%;
     }
   }
+}
+
+.content {
+  padding: 0.5rem;
 }
