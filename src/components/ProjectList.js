@@ -22,12 +22,10 @@ const data = [
 const ProjectList = ({ list }) => {
   return (
     <div>
-      <a href="#testgg">이동</a>
-      <br />
-      <span>진행중인 프로젝트 입니다.</span>
-      <div className="test">
+      <span id="Mainhadding">🌲 진행한 프로젝트</span>
+      <div className="listbox">
         {data.map(item => (
-          <div className="test__item">
+          <div className="listbox__item">
             <div className="content">
               <img src={projecttest} alt="test" width="100%" />
             </div>

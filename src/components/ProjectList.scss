@@ -1,6 +1,13 @@
 $length: 13rem;
 
-.test {
+#Mainhadding {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.listbox {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

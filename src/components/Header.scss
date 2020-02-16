@@ -1,43 +1,68 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean");
-$isactive: #c678dd;
+@import url("https://fonts.googleapis.com/css?family=Roboto:900i&display=swap");
 $project: #97c278;
 $playground: #e06c75;
 $contact: #61afef;
 
 .wrap {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -55px;
+  background-color: #056cf2;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+
+  &__item {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .namebox {
-  background-color: white;
+  background-color: #0439d9;
   display: table;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0px 0px 15px 3px #0439d9;
 
   &__nametext {
-    font-size: 1.5rem;
-    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2rem;
     font-weight: 900;
-    color: #282c35;
+    color: white;
   }
 }
 
 .navlist {
   &__navitem {
-    color: #afafaf;
-    font-size: 1rem;
-    font-family: "Noto Sans KR", sans-serif;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
     font-weight: 900;
-    padding-left: 35px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    background-color: white;
+    transition: background-color 0.3s;
+    color: #056cf2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px 10px #c0c0c0;
 
-    &.about {
-      color: $isactive;
+    &.isactive {
+      color: #f20732;
+    }
+
+    &:hover {
+      background-color: #f20732;
+      color: white;
+      transition: background-color 0.3s;
     }
   }
 }
