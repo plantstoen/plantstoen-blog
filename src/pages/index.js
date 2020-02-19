@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Layout from "../components/layout"
+import PostList from "../components/PostList"
 
 export default ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -14,8 +15,7 @@ export default ({ children }) => {
   `)
   return (
     <Layout>
-      <span>{data.site.siteMetadata.title}</span>
-      <Link to="/test">테스트로</Link>
+      <PostList />
     </Layout>
   )
 }

@@ -1,15 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
-import Introduce from "../components/Introduce"
-import Nowido from "../components/Nowido"
-import ProjectList from "../components/ProjectList"
 import { graphql } from "gatsby"
 
 export default ({ data }) => {
   return (
     <Layout>
-      <Introduce />
-      {/*<Nowido />*/}
+      프로젝트 페이지 입니다
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <h1>{node.frontmatter.projectname}</h1>
+      ))}
     </Layout>
   )
 }

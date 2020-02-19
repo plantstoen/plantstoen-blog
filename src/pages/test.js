@@ -6,7 +6,6 @@ export default ({ data }) => {
   return (
     <Layout>
       <Link to="/">홈으로</Link>
-      <h1>Amazing Pandas Eating Things</h1>
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
