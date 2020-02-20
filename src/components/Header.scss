@@ -25,7 +25,19 @@ $contact: #61afef;
 }
 
 .namebox {
-  background-color: #ffffff;
+  //background-color: #acacac;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   display: table;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
@@ -36,7 +48,7 @@ $contact: #61afef;
   &__nametext {
     font-size: 2rem;
     font-weight: 900;
-    color: #282c35;
+    color: #ffffff;
   }
 }
 
@@ -53,7 +65,7 @@ $contact: #61afef;
     padding-bottom: 0.3rem;
     //background-color: white;
     transition: background-color 0.3s;
-    color: white;
+    color: rgb(187, 187, 187);
     border-radius: 10px;
     //box-shadow: 0px 0px 10px 10px #c0c0c0;
 
