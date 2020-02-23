@@ -2,16 +2,20 @@ import React, { useState, useCallback, useEffect, useRef } from "react"
 import testImage1 from "../../images/testImage1.jpg"
 import testImage2 from "../../images/testImage2.jpg"
 import testImage3 from "../../images/testImage3.png"
+//import useClientWidth from "./useClientWidth"
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md"
 import "./SlideBanner.scss"
 
 const SlideBanner = () => {
   let isSlideDone = 0
   let counter = 1
   const carouselSlide = useRef(null)
-  const size = window.outerWidth
+  const testImage = useRef() // 얘가 안됨
+  const size = document.body.clientWidth
   useEffect(() => {
     carouselSlide.current.style.transform =
       "translateX(" + -size * counter + "px)"
+    console.log(size)
   }, [])
 
   const nextBtnClick = useCallback(e => {
@@ -27,6 +31,7 @@ const SlideBanner = () => {
 
   const prevBtnClick = useCallback(e => {
     if (isSlideDone === 0) {
+      isSlideDone = 1
       carouselSlide.current.style.transition = "transform 0.6s ease-in-out"
       counter--
       carouselSlide.current.style.transform =
@@ -54,12 +59,20 @@ const SlideBanner = () => {
   return (
     <div>
       <div className="carousel-container">
+        <MdKeyboardArrowLeft id="prevBtn" onClick={prevBtnClick} />
+        <MdKeyboardArrowRight id="nextBtn" onClick={nextBtnClick} />
         <div
           className="carousel-slide"
           ref={carouselSlide}
           onTransitionEnd={transitionEnd}
         >
-          <img className="bannerimage" src={testImage3} id="lastClone" alt="" />
+          <img
+            className="bannerimage"
+            ref={testImage}
+            src={testImage3}
+            id="lastClone"
+            alt=""
+          />
           <img className="bannerimage" src={testImage1} alt="" />
           <img className="bannerimage" src={testImage2} alt="" />
           <img className="bannerimage" src={testImage3} alt="" />
@@ -71,12 +84,6 @@ const SlideBanner = () => {
           />
         </div>
       </div>
-      <button id="prevBtn" onClick={prevBtnClick}>
-        Prev
-      </button>
-      <button id="nextBtn" onClick={nextBtnClick}>
-        Next
-      </button>
     </div>
   )
 }

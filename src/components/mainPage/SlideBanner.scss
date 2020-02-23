@@ -2,6 +2,7 @@
   margin: auto;
   //border: 5px solid black;
   overflow: hidden;
+  position: relative;
 }
 
 .carousel-slide {
@@ -12,4 +13,26 @@
 .bannerimage {
   width: 100%;
   height: 100%;
+}
+
+#prevBtn {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  z-index: 10;
+  font-size: 80px;
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#nextBtn {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  z-index: 10;
+  font-size: 80px;
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
 }
