@@ -5,40 +5,70 @@ import testImage3 from "../../images/testImage3.png"
 import "./SlideBanner.scss"
 
 const SlideBanner = () => {
-  const [counter, setCounter] = useState(1)
+  let isSlideDone = 0
+  let counter = 1
   const carouselSlide = useRef(null)
-  const size = 1000
+  const size = window.outerWidth
   useEffect(() => {
-    console.log("마운트될 때만")
     carouselSlide.current.style.transform =
       "translateX(" + -size * counter + "px)"
-    console.log(counter)
   }, [])
 
   const nextBtnClick = useCallback(e => {
-    carouselSlide.current.style.transition = "transform 0.4s ease-in-out"
-    setCounter(counter + 1)
-    carouselSlide.current.style.transform =
-      "translateX(" + -size * counter + "px)"
-    console.log(counter)
+    if (isSlideDone === 0) {
+      isSlideDone = 1
+      carouselSlide.current.style.transition = "transform 0.6s ease-in-out"
+      counter++
+      carouselSlide.current.style.transform =
+        "translateX(" + -size * counter + "px)"
+      console.log(counter)
+    }
   })
 
   const prevBtnClick = useCallback(e => {
-    carouselSlide.current.style.transition = "transform 0.4s ease-in-out"
-    setCounter(counter - 1)
-    carouselSlide.current.style.transform =
-      "translateX(" + -size * counter + "px)"
-    console.log(counter)
+    if (isSlideDone === 0) {
+      carouselSlide.current.style.transition = "transform 0.6s ease-in-out"
+      counter--
+      carouselSlide.current.style.transform =
+        "translateX(" + -size * counter + "px)"
+      console.log(counter)
+    }
   })
+
+  const transitionEnd = useCallback(e => {
+    isSlideDone = 0
+    if (counter === 0) {
+      carouselSlide.current.style.transition = "none"
+      counter = 3
+      carouselSlide.current.style.transform =
+        "translateX(" + -size * counter + "px)"
+    }
+    if (counter === 4) {
+      carouselSlide.current.style.transition = "none"
+      counter = 1
+      carouselSlide.current.style.transform =
+        "translateX(" + -size * counter + "px)"
+    }
+  })
+
   return (
     <div>
       <div className="carousel-container">
-        <div className="carousel-slide" ref={carouselSlide}>
-          <img src={testImage3} id="lastClone" alt="" width="1000px" />
-          <img src={testImage1} alt="" width="1000px" />
-          <img src={testImage2} alt="" width="1000px" />
-          <img src={testImage3} alt="" width="1000px" />
-          <img src={testImage1} id="firstClone" alt="" width="1000px" />
+        <div
+          className="carousel-slide"
+          ref={carouselSlide}
+          onTransitionEnd={transitionEnd}
+        >
+          <img className="bannerimage" src={testImage3} id="lastClone" alt="" />
+          <img className="bannerimage" src={testImage1} alt="" />
+          <img className="bannerimage" src={testImage2} alt="" />
+          <img className="bannerimage" src={testImage3} alt="" />
+          <img
+            className="bannerimage"
+            src={testImage1}
+            id="firstClone"
+            alt=""
+          />
         </div>
       </div>
       <button id="prevBtn" onClick={prevBtnClick}>
