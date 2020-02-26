@@ -21,7 +21,7 @@ const SlideBanner = () => {
   const nextBtnClick = useCallback(e => {
     if (isSlideDone === 0) {
       isSlideDone = 1
-      carouselSlide.current.style.transition = "transform 0.6s ease-in-out"
+      carouselSlide.current.style.transition = "transform 0.4s ease-in-out"
       counter++
       carouselSlide.current.style.transform =
         "translateX(" + -size * counter + "px)"
@@ -32,7 +32,7 @@ const SlideBanner = () => {
   const prevBtnClick = useCallback(e => {
     if (isSlideDone === 0) {
       isSlideDone = 1
-      carouselSlide.current.style.transition = "transform 0.6s ease-in-out"
+      carouselSlide.current.style.transition = "transform 0.4s ease-in-out"
       counter--
       carouselSlide.current.style.transform =
         "translateX(" + -size * counter + "px)"

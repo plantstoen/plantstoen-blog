@@ -17,7 +17,6 @@ export default ({ children }) => {
   `)
   return (
     <>
-      <Header />
       <SlideBanner />
       <Layout></Layout>
     </>
