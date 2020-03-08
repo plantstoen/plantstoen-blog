@@ -1,17 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
-import Introduce from "../components/Introduce"
-import Nowido from "../components/Nowido"
-import ProjectList from "../components/ProjectList"
 import { graphql } from "gatsby"
 
 export default ({ data }) => {
-  return (
-    <Layout>
-      <Introduce />
-      {/*<Nowido />*/}
-    </Layout>
-  )
+  return <Layout>{/*<Nowido />*/}</Layout>
 }
 
 export const query = graphql`

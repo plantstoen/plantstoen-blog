@@ -1,80 +1,44 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean");
-@import url("https://fonts.googleapis.com/css?family=Roboto:900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:700i,900&display=swap");
 $project: #97c278;
 $playground: #e06c75;
 $contact: #61afef;
 
 .wrap {
   margin-top: 0rem;
+  background-image: url("../images/BackVector.png");
+  background-size: 100%;
+  background-position: center bottom;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  height: 300px;
 
   &__item {
-    width: 84%;
-    max-width: 1200px;
+    width: 60%;
+    max-width: 1000px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
   }
 }
 
-.namebox {
-  //background-color: #acacac;
-  background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f5af19,
-    #f12711
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f5af19,
-    #f12711
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  display: table;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  //box-shadow: 0px 0px 15px 3px #0439d9;
-
-  &__nametext {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #ffffff;
-  }
+.title {
+  color: white;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+  font-size: 9rem;
+  line-height: 100%;
 }
 
-.navlist {
-  &__navitem {
-    margin-left: 1.5rem;
-    font-size: 1.3rem;
-    font-family: "Roboto", sans-serif;
-    font-style: italic;
-    font-weight: 900;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    //background-color: white;
-    transition: background-color 0.3s;
-    color: rgb(187, 187, 187);
-    border-radius: 10px;
-    //box-shadow: 0px 0px 10px 10px #c0c0c0;
-
-    &.isactive {
-      background-color: #f20732;
-      color: white;
-    }
-
-    &:hover {
-      background-color: #f20732;
-      color: white;
-      transition: background-color 0.3s;
-    }
-  }
+.name {
+  margin-bottom: 5px;
+  color: #ffca28;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
 }

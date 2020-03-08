@@ -6,20 +6,8 @@ const Header = ({ history }) => {
   return (
     <div className="wrap">
       <div className="wrap__item">
-        <Link to="/">
-          <div className="namebox">
-            <span className="namebox__nametext">Plantstoen</span>
-          </div>
-        </Link>
-        <div className="navlist">
-          <Link
-            to={"about"}
-            className="navlist__navitem"
-            activeClassName="isactive"
-          >
-            ABOUT
-          </Link>
-        </div>
+        <span className="title">POST_IT</span>
+        <span className="name">@sangminKim</span>
       </div>
     </div>
   )
