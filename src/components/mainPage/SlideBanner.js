@@ -11,7 +11,7 @@ const SlideBanner = () => {
   let counter = 1
   const carouselSlide = useRef(null)
   const testImage = useRef() // 얘가 안됨
-  const size = document.body.clientWidth
+  const size = 1200 // 이미지 크기 받아와서 여기다 넣어야함
   useEffect(() => {
     carouselSlide.current.style.transform =
       "translateX(" + -size * counter + "px)"

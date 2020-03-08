@@ -19,13 +19,6 @@ const Header = ({ history }) => {
           >
             ABOUT
           </Link>
-          <Link
-            to={"project"}
-            className="navlist__navitem"
-            activeClassName="isactive"
-          >
-            PROJECT
-          </Link>
         </div>
       </div>
     </div>

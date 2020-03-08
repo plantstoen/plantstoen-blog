@@ -5,10 +5,7 @@ $playground: #e06c75;
 $contact: #61afef;
 
 .wrap {
-  margin-top: 2rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: -55px;
+  margin-top: 0rem;
 
   display: flex;
   flex-direction: column;
@@ -16,7 +13,7 @@ $contact: #61afef;
 
   &__item {
     width: 84%;
-    max-width: 800px;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
