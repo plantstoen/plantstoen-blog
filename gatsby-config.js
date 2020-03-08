@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `김상민의 블로그`,
+    title: `POST_IT`,
     description: `18살 고등학생 기획자의 개인블로그 입니다.`,
     author: `Sangmin Kim`,
   },
@@ -29,6 +29,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `image`,
+        path: `${__dirname}/src/data/post/thumbnail`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `project`,
         path: `${__dirname}/src/data/project`,
       },
@@ -42,7 +49,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 2000,
             },
           },
         ],
