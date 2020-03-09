@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `image`,
+        name: `thumbnail`,
         path: `${__dirname}/src/data/post/thumbnail`,
       },
     },

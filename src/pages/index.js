@@ -17,8 +17,9 @@ export default ({ children }) => {
   return (
     <>
       <Header />
-      <Layout></Layout>
-      <PostList />
+      <Layout>
+        <PostList />
+      </Layout>
     </>
   )
 }
