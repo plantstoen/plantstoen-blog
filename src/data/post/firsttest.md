@@ -3,7 +3,7 @@ type: "post"
 title: "Sweet Pandas Eating Sweets"
 date: "2017-08-10"
 category: "dev"
-featuredImage: ./BackVector.png
+featuredImage: ./thumbnail/BackVector.png
 ---
 
 Pandas are really sweet.

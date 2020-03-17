@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Postitem from "./PostItem"
 
 export default ({ data }) => {
   const postList = useStaticQuery(graphql`
@@ -16,6 +17,14 @@ export default ({ data }) => {
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")
+              category
+              featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 6000) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
             fields {
               slug
@@ -30,16 +39,15 @@ export default ({ data }) => {
   return (
     <>
       <h4>{postList.allMarkdownRemark.totalCount} Posts</h4>
-      {postList.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <span>{node.frontmatter.featuredImage}</span>
-          <Link to={node.fields.slug}>
-            <h3>
-              {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </Link>
-        </div>
+      {postList.allMarkdownRemark.edges.map(node => (
+        <Postitem
+          key={node.node.id}
+          title={node.node.frontmatter.title}
+          slug={node.node.fields.slug}
+          data={node.node.frontmatter.date}
+          excerpt={node.node.excerpt}
+          fluid={node.node.frontmatter.featuredImage.childImageSharp.fluid}
+        />
       ))}
     </>
   )
