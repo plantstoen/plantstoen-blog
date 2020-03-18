@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import "./PostItem.scss"
 
-const PostItem = ({ title, slug, data, excerpt, fluid }) => {
+const PostItem = ({ title, slug, data, excerpt, category, fluid }) => {
   return (
     <>
       <div className="item">
@@ -11,7 +11,9 @@ const PostItem = ({ title, slug, data, excerpt, fluid }) => {
           <Img className="item__image" fluid={fluid} />
           <h3 className="item__title">{title}</h3>
           <p className="item__excerpt">{excerpt}</p>
-          <span>— {data}</span>
+          <span className="item__sub">
+            {category} · {data}
+          </span>
         </Link>
       </div>
     </>

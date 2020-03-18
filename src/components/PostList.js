@@ -30,7 +30,7 @@ export default ({ data }) => {
             fields {
               slug
             }
-            excerpt(pruneLength: 110)
+            excerpt(pruneLength: 120, truncate: true)
           }
         }
       }
@@ -39,7 +39,6 @@ export default ({ data }) => {
 
   return (
     <>
-      <h4>{postList.allMarkdownRemark.totalCount} Posts</h4>
       <div className="postarea">
         {postList.allMarkdownRemark.edges.map(node => (
           <Postitem
@@ -49,6 +48,7 @@ export default ({ data }) => {
             slug={node.node.fields.slug}
             data={node.node.frontmatter.date}
             excerpt={node.node.excerpt}
+            category={node.node.frontmatter.category}
             fluid={node.node.frontmatter.featuredImage.childImageSharp.fluid}
           />
         ))}
