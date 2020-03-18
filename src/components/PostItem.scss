@@ -1,0 +1,19 @@
+.item {
+  width: 32%;
+
+  &__image {
+    border-radius: 7px;
+    height: 250px;
+  }
+
+  &__title {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  &__excerpt {
+    margin: 0;
+    color: rgb(172, 172, 172);
+  }
+}

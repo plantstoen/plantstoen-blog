@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Postitem from "./PostItem"
+import "./PostList.scss"
 
 export default ({ data }) => {
   const postList = useStaticQuery(graphql`
@@ -29,7 +30,7 @@ export default ({ data }) => {
             fields {
               slug
             }
-            excerpt
+            excerpt(pruneLength: 110)
           }
         }
       }
@@ -39,16 +40,19 @@ export default ({ data }) => {
   return (
     <>
       <h4>{postList.allMarkdownRemark.totalCount} Posts</h4>
-      {postList.allMarkdownRemark.edges.map(node => (
-        <Postitem
-          key={node.node.id}
-          title={node.node.frontmatter.title}
-          slug={node.node.fields.slug}
-          data={node.node.frontmatter.date}
-          excerpt={node.node.excerpt}
-          fluid={node.node.frontmatter.featuredImage.childImageSharp.fluid}
-        />
-      ))}
+      <div className="postarea">
+        {postList.allMarkdownRemark.edges.map(node => (
+          <Postitem
+            className="postarea__item"
+            key={node.node.id}
+            title={node.node.frontmatter.title}
+            slug={node.node.fields.slug}
+            data={node.node.frontmatter.date}
+            excerpt={node.node.excerpt}
+            fluid={node.node.frontmatter.featuredImage.childImageSharp.fluid}
+          />
+        ))}
+      </div>
     </>
   )
 }
