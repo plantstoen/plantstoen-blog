@@ -11,7 +11,7 @@ const PostItem = ({ title, slug, data, excerpt, category, fluid }) => {
           <Img className="item__image" fluid={fluid} />
           <h3 className="item__title">{title}</h3>
           <p className="item__excerpt">{excerpt}</p>
-          <span className="item__sub">
+          <span className="item__sub" id={category}>
             {category} · {data}
           </span>
         </Link>

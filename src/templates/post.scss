@@ -1,0 +1,34 @@
+.topbanner {
+  position: relative;
+
+  &__data {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    color: white;
+    position: absolute;
+    bottom: 1%;
+    margin: 0;
+  }
+}
+
+.image {
+  height: 500px;
+}
+
+.textarea {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.realtext {
+  color: white;
+
+  &__p {
+    font-size: 10rem;
+  }
+}

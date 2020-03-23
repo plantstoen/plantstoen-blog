@@ -32,6 +32,11 @@ $contact: #61afef;
   font-family: "Roboto", sans-serif;
   font-size: 9rem;
   line-height: 100%;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .name {
