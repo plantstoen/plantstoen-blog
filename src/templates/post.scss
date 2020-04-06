@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean");
+
 .topbanner {
   position: relative;
 
@@ -7,11 +9,33 @@
     margin-right: auto;
   }
 
+  &__back {
+    color: white;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  &__forab {
+    position: absolute;
+    top: 5%;
+  }
+
   &__title {
     color: white;
+    margin: 0;
+  }
+
+  &__abs {
     position: absolute;
     bottom: 1%;
-    margin: 0;
+  }
+
+  &__sub {
+    color: white;
+    font-family: "Patua One", cursive;
   }
 }
 
@@ -28,7 +52,22 @@
 .realtext {
   color: white;
 
-  &__p {
-    font-size: 10rem;
+  p {
+    font-size: 1rem;
+    font-family: "Noto Sans KR", sans-serif;
   }
+
+  a {
+    font-weight: 700;
+    color: rgb(103, 103, 206);
+  }
+
+  pre {
+    background-color: #212121;
+  }
+}
+
+.backtext {
+  color: white;
+  font-size: 1.2rem;
 }

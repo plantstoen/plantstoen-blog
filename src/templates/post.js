@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import "./post.scss"
@@ -13,9 +13,21 @@ export default ({ data }) => {
           className="image"
           fluid={post.frontmatter.banner.childImageSharp.fluid}
         />
+        <div className="topbanner__back">
+          <div className="topbanner__forab">
+            <Link to="/" className="backtext">
+              ╳
+            </Link>
+          </div>
+        </div>
         <div className="topbanner__data">
-          <SEO title={post.frontmatter.title} description={post.excerpt} />
-          <h1 className="topbanner__title">{post.frontmatter.title}</h1>
+          <div className="topbanner__abs">
+            <SEO title={post.frontmatter.title} description={post.excerpt} />
+            <h1 className="topbanner__title">{post.frontmatter.title}</h1>
+            <span className="topbanner__sub">
+              {post.frontmatter.category} · {post.frontmatter.date}
+            </span>
+          </div>
         </div>
       </div>
       <div className="textarea">

@@ -11,8 +11,9 @@ module.exports = {
     author: `Sangmin Kim`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    `gatsby-plugin-sass`, //NOTE sass
     {
+      //NOTE post filesystem
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `post`,
@@ -20,6 +21,7 @@ module.exports = {
       },
     },
     {
+      //NOTE image filesystem
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `image`,
@@ -27,6 +29,7 @@ module.exports = {
       },
     },
     {
+      //NOTE thumbanil filesystem
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `thumbnail`,
@@ -34,15 +37,17 @@ module.exports = {
       },
     },
     {
+      // NOTE project filesystem
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `project`,
         path: `${__dirname}/src/data/project`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, //NOTE transformer-sharp
+    `gatsby-plugin-sharp`, //NOTE plugin-sharp
     {
+      //NOTE remark-image
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -55,8 +60,9 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`, //NOTE offline
     {
+      //NOTE manifest
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `GatsbyJS`,
@@ -70,7 +76,43 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`, //NOTE react-helmet
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: "superscript",
+                  extend: "javascript",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
+        ],
+      },
+    },
   ],
   /* Your site config here */
 }

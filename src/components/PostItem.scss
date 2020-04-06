@@ -24,10 +24,17 @@
     font-family: "Patua One", cursive;
     font-size: 1.2rem;
   }
+
+  @media screen and (min-width: 450px) and (max-width: 1200px) {
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
 }
 
 #Design {
-  color: rgb(168, 201, 23);
+  color: rgb(228, 214, 15);
 }
 
 #Essay {
@@ -35,5 +42,5 @@
 }
 
 #React {
-  color: rgb(37, 214, 199);
+  color: #61d4f7;
 }

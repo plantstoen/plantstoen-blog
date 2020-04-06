@@ -24,6 +24,15 @@ $contact: #61afef;
     justify-content: space-between;
     align-items: flex-end;
   }
+
+  @media screen and (min-width: 450px) and (max-width: 1200px) {
+    background-color: red;
+  }
+
+  @media screen and (max-width: 450px) {
+    background-size: 200%;
+    height: 200px;
+  }
 }
 
 .title {
@@ -37,6 +46,14 @@ $contact: #61afef;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
+  @media screen and (min-width: 450px) and (max-width: 1200px) {
+    font-size: 6rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 30px;
+  }
 }
 
 .name {
